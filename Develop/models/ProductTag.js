@@ -16,7 +16,9 @@ ProductTag.init(
     product_id: {
       type: DataTypes.INTEGER,
       references: {
-        //references to 'product' model under modelName property in Product.js
+        //
+        // Goes to model and gets the product by id
+        //
         model: 'product',
         key: 'id',
       },
