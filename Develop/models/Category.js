@@ -7,7 +7,7 @@ class Category extends Model {}
 Category.init(
   {
     // 
-    // Type defs
+    // Type defs (id and name)
     //
     id: {
       type: DataTypes.INTEGER,
