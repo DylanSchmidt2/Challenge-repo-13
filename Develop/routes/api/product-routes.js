@@ -18,8 +18,7 @@ router.get('/', async (req, res) => {
 
 
 router.get('/:id', async (req, res) => {
-  // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
+
   try {
     const productData = await Product.findByPk(req.params.id, {
       include: [{ model: Category}, {model: Tag}],
@@ -56,7 +55,7 @@ router.post('/', (req, res) => {
         });
         return ProductTag.bulkCreate(productTagIdArr);
       }
-      // if no product tags, just respond
+    
       res.status(200).json(product);
     })
     .then((productTagIds) => res.status(200).json(productTagIds))
